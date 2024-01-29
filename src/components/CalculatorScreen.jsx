@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const CalculatorScreen = ({ number }) => {
   return (
-    <div className='mt-5 p-2 justify-end h-20 border-2 shadow-lg border-indigo-400 grid content-center rounded'>
-      <div className='text-2xl'> {number} </div>
+    <div className="grid content-center justify-end h-20 p-2 mt-5 border-2 border-indigo-400 rounded shadow-lg">
+      <div className="text-2xl"> {number} </div>
     </div>
   );
 };
