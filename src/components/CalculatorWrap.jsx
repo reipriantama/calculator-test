@@ -15,6 +15,16 @@ const CalculatorWrap = () => {
     setResult("");
   };
 
+  const handleEqual = () => {
+    try {
+      const calculatedResult = eval(number).toString();
+      setResult(calculatedResult);
+      setNumber(calculatedResult);
+    } catch (error) {
+      setResult("Error");
+    }
+  };
+
   return (
     <div className="flex justify-center ">
       <div className="p-3 border-4 border-gray-100 shadow-xl rounded-2xl">
@@ -23,6 +33,7 @@ const CalculatorWrap = () => {
         <KeypadComponents
           onNumberClick={handleSetNumber}
           onResetClick={handleReset}
+          onEqualClick={handleEqual}
         />
       </div>
     </div>

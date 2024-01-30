@@ -81,7 +81,7 @@ export const KeypadComponents = ({
         </button>
         <button
           className="bg-indigo-600 border-2 border-indigo-100 rounded-lg shadow-lg size-20 hover:border-2 hover:border-indigo-300"
-          onClick={() => onEqualClick("*")}
+          onClick={() => onNumberClick("*")}
         >
           *
         </button>
@@ -102,7 +102,7 @@ export const KeypadComponents = ({
         </button>
         <button
           className="bg-indigo-600 border-2 border-indigo-100 rounded-lg shadow-lg size-20 hover:border-2 hover:border-indigo-300"
-          onClick={() => onNumberClick()}
+          onClick={() => onEqualClick()}
         >
           =
         </button>
