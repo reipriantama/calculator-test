@@ -1,39 +1,38 @@
-import React, { useState } from "react";
-import { KeypadComponents } from "./KeypadComponents";
-import CalculatorScreen from "./CalculatorScreen";
+import React, { useState } from 'react';
+import { KeypadComponents } from './KeypadComponents';
+import CalculatorScreen from './CalculatorScreen';
 
 const CalculatorWrap = () => {
-  const [number, setNumber] = useState("");
-  const [result, setResult] = useState("");
+  const [number, setNumber] = useState('');
 
   const handleSetNumber = (inputNumber) => {
     setNumber((prevNumber) => prevNumber + inputNumber);
   };
 
   const handleReset = () => {
-    setNumber("");
-    setResult("");
+    setNumber('');
   };
 
-  const handleEqual = () => {
+  const handleEquals = () => {
     try {
-      const calculatedResult = eval(number).toString();
-      setResult(calculatedResult);
+      const calculatedResult = eval(number);
       setNumber(calculatedResult);
     } catch (error) {
-      setResult("Error");
+      setNumber('Error');
     }
   };
 
   return (
-    <div className="flex justify-center ">
-      <div className="p-3 border-4 border-gray-100 shadow-xl rounded-2xl">
-        Calculator Wrap
-        <CalculatorScreen number={number} result={result} />
+    <div className='flex justify-center '>
+      <div className='p-3 text-white bg-indigo-300 border-4 border-indigo-100 shadow-xl rounded-2xl'>
+        <h1 className='flex justify-center text-lg font-bold uppercase'>
+          Calculator
+        </h1>
+        <CalculatorScreen number={number} />
         <KeypadComponents
           onNumberClick={handleSetNumber}
           onResetClick={handleReset}
-          onEqualClick={handleEqual}
+          onResultClick={handleEquals}
         />
       </div>
     </div>
