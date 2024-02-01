@@ -17,9 +17,6 @@ const CalculatorWrap = () => {
     try {
       const calculatedResult = eval(number);
       setNumber(calculatedResult);
-      setTimeout(() => {
-        setNumber('');
-      }, 5000);
     } catch (error) {
       setNumber('Error');
       setTimeout(() => {
